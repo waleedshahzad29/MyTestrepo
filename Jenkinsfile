@@ -8,8 +8,8 @@ pipeline {
         stage('Build') {
             steps {
 //                sh './gradlew assemble'
-                sh 'touch ${BRANCH_NAME}_{TAG_NAME}'
-                sh 'echo readable >> ${BRANCH_NAME}_{TAG_NAME}'
+                sh 'touch "${BRANCH_NAME}_${TAG_NAME}"'
+                sh 'echo readable >> "${BRANCH_NAME}_${TAG_NAME}"'
             }
         }
         stage('Test') {
