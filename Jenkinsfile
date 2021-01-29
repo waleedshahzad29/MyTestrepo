@@ -8,7 +8,6 @@ pipeline {
         stage('Build') {
             steps {
 //                sh './gradlew assemble'
-                sh 'mkdir origin'
                 sh 'touch "${BRANCH_NAME##origin/}_${TAG_NAME}"'
                 sh 'cat readable >> "${BRANCH_NAME##origin/}_${TAG_NAME}"'
             }
